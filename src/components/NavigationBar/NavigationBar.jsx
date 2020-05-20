@@ -1,9 +1,11 @@
 import React from 'react';
 import { AppBar, Toolbar, Button, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import useStyles from './styles';
 
 export default function ButtonAppBar() {
+  const { activeUser } = useSelector((store) => store.users);
   const classes = useStyles();
 
   return (
@@ -16,7 +18,7 @@ export default function ButtonAppBar() {
             <Button component={Link} to="/leaderboard" color="inherit">Leaderboard</Button>
           </div>
           <div className={classes.list}>
-            <Typography className={classes.typography} display="inline" variant="subtitle1">Logged in as: Person</Typography>
+            {activeUser && <Typography className={classes.typography} display="inline" variant="subtitle1">Logged in as: {activeUser}</Typography>}
             <Button component={Link} to="change-user" color="inherit">Change User</Button>
           </div>
         </Toolbar>
