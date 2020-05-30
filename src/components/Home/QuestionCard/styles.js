@@ -4,13 +4,12 @@ export default makeStyles((theme) => ({
   root: {
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: theme.spacing(2),
   },
   details: {
     display: 'flex',
     flexDirection: 'column',
-  },
-  content: {
-    flex: '1 0 auto',
   },
   cover: {
     width: 151,

@@ -18,7 +18,8 @@ export default function ButtonAppBar() {
             <Button component={Link} to="/leaderboard" color="inherit">Leaderboard</Button>
           </div>
           <div className={classes.list}>
-            {activeUser && <Typography className={classes.typography} display="inline" variant="subtitle1">Logged in as: {activeUser}</Typography>}
+            <img src={activeUser.avatarURL} height="50px" />
+            {activeUser && <Typography className={classes.typography} display="inline" variant="subtitle1">Logged in as: {activeUser.name}</Typography>}
             <Button component={Link} to="change-user" color="inherit">Change User</Button>
           </div>
         </Toolbar>

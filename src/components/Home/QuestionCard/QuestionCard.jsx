@@ -1,26 +1,21 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography } from '@material-ui/core';
+import { Paper, Typography, Button } from '@material-ui/core';
 import useStyles from './styles';
 
-const QuestionCard = ({ question: { author, optionOne, optionTwo } }) => {
+const QuestionCard = ({ question: { author, optionOne, optionTwo }, users }) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Paper className={classes.root} elevation={3}>
       <div className={classes.details}>
-        <CardContent className={classes.content}>
-          <Typography component="h5" variant="h5">{author} asks:</Typography>
-          <Typography component="h6" variant="h6">Would you rather</Typography>
-          <Typography variant="subtitle1" color="textSecondary">{optionOne.text} or...</Typography>
-          <Typography variant="subtitle1" color="textSecondary">{optionTwo.text}</Typography>
-        </CardContent>
+        <Typography component="h5" variant="h5">{author} asks:</Typography>
+        <Typography component="h6" variant="h6">Would you rather</Typography>
+        <Typography variant="subtitle1" color="textSecondary">{optionOne.text} or...</Typography>
+        <Typography variant="subtitle1" color="textSecondary">{optionTwo.text}</Typography>
       </div>
-      <CardMedia
-        className={classes.cover}
-        image="https://via.placeholder.com/150"
-        title={author}
-      />
-    </Card>
+      <Button variant="contained" color="primary">Answer Poll</Button>
+      <img className={classes.cover} src={users[author].avatarURL} alt={author} />
+    </Paper>
   );
 };
 

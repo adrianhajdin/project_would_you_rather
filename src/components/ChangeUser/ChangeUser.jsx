@@ -13,7 +13,7 @@ const ChangeUser = () => {
     <FormControl className={classes.formControl}>
       <InputLabel>User</InputLabel>
       <Select value={activeUser} onChange={(e) => dispatch(selectActiveUser(e.target.value))}>
-        {Object.keys(users).map((user) => <MenuItem key={user} value={user}>{user}</MenuItem>)}
+        {Object.values(users).map((user) => <MenuItem key={user.id} value={user}>{user.id}</MenuItem>)}
       </Select>
     </FormControl>
   );

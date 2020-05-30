@@ -5,7 +5,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import useStyles from './styles';
 
-const UserCard = ({ user: { name, questions, answers } }) => {
+const UserCard = ({ user: { name, questions, answers, avatarURL } }) => {
   const classes = useStyles();
 
   return (
@@ -20,7 +20,7 @@ const UserCard = ({ user: { name, questions, answers } }) => {
       </div>
       <CardMedia
         className={classes.cover}
-        image="https://via.placeholder.com/150"
+        image={avatarURL}
         title={name}
       />
     </Card>

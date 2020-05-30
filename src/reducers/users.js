@@ -1,6 +1,8 @@
+import { users } from '../data';
+
 const initialState = {
   users: [],
-  activeUser: 'johndoe',
+  activeUser: users.sarahedo,
 };
 
 export default (state = initialState, action) => {

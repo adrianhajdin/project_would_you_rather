@@ -15,7 +15,7 @@ const TabPanel = ({ children, value, index }) => (
 const Home = () => {
 //   const classes = useStyles();
   const [value, setValue] = useState(0);
-  const { questions } = useSelector((store) => store.questions);
+  const { questions: { questions }, users: { users } } = useSelector((store) => store);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const Home = () => {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        {questions.map((question) => <QuestionCard key={question.id} question={question} />)}
+        {questions.map((question) => <QuestionCard key={question.id} question={question} users={users} />)}
       </TabPanel>
       <TabPanel value={value} index={1}>
         Answered

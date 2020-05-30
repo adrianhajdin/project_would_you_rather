@@ -2,9 +2,9 @@ import { _getQuestions } from '../data';
 
 export const getQuestions = (type) => async (dispatch, getState) => {
   const questions = await _getQuestions();
-  const { users: { users, activeUser } } = getState();
+  const { users: { activeUser } } = getState();
 
-  const answeredIds = Object.keys(users[activeUser].answers);
+  const answeredIds = Object.keys(activeUser.answers);
 
   const answered = Object.values(questions)
     .filter((question) => answeredIds.includes(question.id))
