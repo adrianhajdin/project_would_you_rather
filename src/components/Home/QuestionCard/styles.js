@@ -3,16 +3,14 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   root: {
     display: 'flex',
-    justifyContent: 'space-between',
+    // justifyContent: 'space-between',
     alignItems: 'center',
     padding: theme.spacing(2),
-  },
-  details: {
-    display: 'flex',
-    flexDirection: 'column',
+    marginBottom: theme.spacing(3),
   },
   cover: {
-    width: 151,
+    width: 75,
+    paddingRight: theme.spacing(2),
   },
   controls: {
     display: 'flex',
@@ -23,6 +21,10 @@ export default makeStyles((theme) => ({
   playIcon: {
     height: 38,
     width: 38,
+  },
+  formControl: {
+    width: '100%',
+    paddingLeft: theme.spacing(2),
   },
 }));
 
